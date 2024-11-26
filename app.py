@@ -11,11 +11,10 @@ class Order(BaseModel):
    client : str
    status : str 
 
-repo ={}
-
+repo = []
 
 app = FastAPI()
  
-@app.get("/")
-def read_root():
-   return "Hello"
+@app.get("/orders")
+def get_orders():
+   return repo
