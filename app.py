@@ -14,16 +14,23 @@ class Order(BaseModel):
 
 repo = [
    Order(
-      number = 1,
-      startDate = "2000-12-01",
-      device = "123",
-      problemType = "123",
-      description = "123",
-      client = "123",
-      status = "в ожидании"
+      number : 1,
+      startDate : "2000-12-01",
+      device : "123",
+      problemType : "123",
+      description : "123",
+      client : "123",
+      status : "в ожидании",
+      master : Optional[str] = "не назначен"
 
    )
 ]
+
+class UpdateOrderDTO(BaseModel):
+      number: int
+      status: Optional[str] = ""
+      description: Optional[str] = ""
+      master: Optional[str] = ""
     
 
 
